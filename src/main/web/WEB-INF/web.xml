@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <display-name>StudyApp</display-name>
+
+    <servlet>
+        <servlet-name>beanServlet</servlet-name>
+        <servlet-class>first.BeanServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>beanServlet</servlet-name>
+        <url-pattern>/bean</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>testServlet</servlet-name>
+        <servlet-class>test.TestServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>testServlet</servlet-name>
+        <url-pattern>/test</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>satatefullBeanServlet</servlet-name>
+        <servlet-class>second.BeanServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>satatefullBeanServlet</servlet-name>
+        <url-pattern>/statefullbean</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>satatefullBeanServlet2</servlet-name>
+        <servlet-class>second.BeanServlet2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>satatefullBeanServlet2</servlet-name>
+        <url-pattern>/statefullbean2</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>satatefullBeanServlet3</servlet-name>
+        <servlet-class>second.BeanServlet3</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>satatefullBeanServlet3</servlet-name>
+        <url-pattern>/statefullbean3</url-pattern>
+    </servlet-mapping>
+</web-app>
