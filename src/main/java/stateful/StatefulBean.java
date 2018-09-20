@@ -1,6 +1,6 @@
-package second;
+package stateful;
 
-import interceptors.LoggerInterceptor;
+import interceptors.HelloInterceptor;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 
 @Stateful
 @SessionScoped
-@Interceptors(LoggerInterceptor.class)
+@Interceptors(HelloInterceptor.class)
 public class StatefulBean implements Serializable{
 
     private int balance = 0;

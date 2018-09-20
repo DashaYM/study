@@ -6,14 +6,11 @@ import javax.interceptor.InvocationContext;
 import java.io.Serializable;
 
 @Interceptor
-public class LoggerInterceptor implements Serializable {
+public class HelloInterceptor implements Serializable{
+
     @AroundInvoke
     public Object sayHello(InvocationContext ctx) throws Exception {
-        StringBuilder sb = new StringBuilder();
-        sb.append(ctx.getTarget().getClass().getCanonicalName());
-        sb.append("::");
-        sb.append(ctx.getMethod().getName());
-        System.out.println("method" + sb);
+        System.out.println("Hello Interceptor!");
         return ctx.proceed();
     }
 }

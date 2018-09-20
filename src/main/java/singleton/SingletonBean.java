@@ -1,6 +1,6 @@
 package singleton;
 
-import interceptors.LoggerInterceptor;
+import interceptors.HelloInterceptor;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -31,7 +31,7 @@ public class SingletonBean {
         return map.get(key);
     }
 
-    @Interceptors(LoggerInterceptor.class)
+    @Interceptors(HelloInterceptor.class)
     @Lock(LockType.WRITE)
     public void store(String key,Object value){
         map.put(key, value);

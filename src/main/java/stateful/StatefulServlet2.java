@@ -1,14 +1,16 @@
-package second;
+package stateful;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class BeanServlet2 extends HttpServlet {
+@WebServlet(name = "StatefulServlet2", urlPatterns = {"/StatefulServlet2"})
+public class StatefulServlet2 extends HttpServlet {
 
     @EJB
     StatefulBean bean;
@@ -16,7 +18,7 @@ public class BeanServlet2 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
-        out.println("I'm a BeanServlet2");
+        out.println("I'm a StatefulServlet2");
 
         bean.increase();
 

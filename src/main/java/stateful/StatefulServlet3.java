@@ -1,15 +1,16 @@
-package second;
+package stateful;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-
-public class BeanServlet3 extends HttpServlet {
+@WebServlet(name = "StatefulServlet3", urlPatterns = {"/StatefulServlet3"})
+public class StatefulServlet3 extends HttpServlet {
 
     @Inject
     StatefulBean bean;
@@ -17,7 +18,7 @@ public class BeanServlet3 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
-        out.println("I'm a BeanServlet3");
+        out.println("I'm a StatefulServlet3");
 
         bean.increase();
         bean.decrease();
@@ -28,7 +29,7 @@ public class BeanServlet3 extends HttpServlet {
     /*@Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
-        out.println("I'm a BeanServlet3");
+        out.println("I'm a StatefulServlet3");
 
         StatefulBean bean = (StatefulBean) request.getSession().getAttribute("bean_name");
         if (bean == null) {
