@@ -15,6 +15,11 @@
             <ejb-name>*</ejb-name>
             <interceptor-class>interceptors.LoggerInterceptor</interceptor-class>
         </interceptor-binding>
+
+        <interceptor-binding>
+            <ejb-name>StatefulBean</ejb-name>
+            <exclude-default-interceptors>true</exclude-default-interceptors>
+        </interceptor-binding>
     </assembly-descriptor>
 
 </ejb-jar>
