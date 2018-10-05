@@ -5,7 +5,6 @@ import javax.interceptor.Interceptor;
 import javax.interceptor.InvocationContext;
 import java.io.Serializable;
 
-@Interceptor
 public class LoggerInterceptor implements Serializable {
     @AroundInvoke
     public Object sayHello(InvocationContext ctx) throws Exception {
@@ -14,6 +13,7 @@ public class LoggerInterceptor implements Serializable {
         sb.append("::");
         sb.append(ctx.getMethod().getName());
         System.out.println("method" + sb);
+        ctx.getContextData().put("loggerInterceptorData", "Hello from LoggerInterceptor");
         return ctx.proceed();
     }
 }
