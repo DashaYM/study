@@ -1,11 +1,15 @@
 package stateless;
 
+import interceptors.HelloInterceptor;
+
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.interceptor.Interceptors;
 import java.util.logging.Logger;
 
+@Interceptors(HelloInterceptor.class)
 @Stateless
 public class StatelessHelloWorldBean {
 
