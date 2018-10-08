@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
 
+@Interceptors(HelloInterceptor.class)
 @Singleton
 public class SingletonBean {
 
@@ -22,7 +23,7 @@ public class SingletonBean {
     @PostConstruct
     public void initCache(){
         map = new HashMap();
-        logger.info("SingletonBean PostConstruct");
+        logger.info("SingletonBean PostConstruct"  + this);
     }
 
     @Lock(LockType.READ)
@@ -31,7 +32,6 @@ public class SingletonBean {
         return map.get(key);
     }
 
-    @Interceptors(HelloInterceptor.class)
     @Lock(LockType.WRITE)
     public void store(String key,Object value){
         map.put(key, value);

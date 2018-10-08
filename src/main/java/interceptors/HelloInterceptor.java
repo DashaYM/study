@@ -9,7 +9,7 @@ public class HelloInterceptor implements Serializable{
 
     @AroundInvoke
     public Object sayHello(InvocationContext ctx) throws Exception {
-        System.out.println("Hello Interceptor!");
+        System.out.println("Hello Interceptor!" + this);
         System.out.println(ctx.getContextData().get("loggerInterceptorData"));
         Object proceed = ctx.proceed();
 
