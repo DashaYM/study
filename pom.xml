@@ -13,6 +13,7 @@
 
     <properties>
         <version.javax.jee.api.version>7.0</version.javax.jee.api.version>
+        <version.oracle.driver>11.2.0.1</version.oracle.driver>
     </properties>
 
     <build>
@@ -45,6 +46,13 @@
             <artifactId>javaee-api</artifactId>
             <version>7.0</version>
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>driver</artifactId>
+            <version>${version.oracle.driver}</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 </project>
