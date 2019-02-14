@@ -1,5 +1,4 @@
-div {
-}
+
 .card{
     margin: auto;
     width: 400px;
@@ -8,7 +7,6 @@ div {
 .card-header {
     background-color: dimgrey;
     position: relative;
-    font-size: 50px;
     border: solid 1px dimgrey;
 }
 
@@ -18,37 +16,48 @@ div {
     right:  -5px;
     top:  -5px;
 }
+.card-header .button:focus{
+    color: chartreuse;
+}
 
 .card-header .logo{
     font-size: 200px;
     text-align: center;
     position: relative;
-    margin-top: 70px;
+    margin-top: 25px;
 }
+
 
 .card-header .logo .fa-user-circle {
     color: chartreuse;
+    background-color: white;
     border-radius: 50%;
-    background: white;
-    padding: -10px;
+
 }
 
 .card-header .title{
     font-size: 50px;
+    font-weight: bold;
     text-align: center;
-    padding: 10px;
+    color:  white;
+    padding: 15px;
+    margin-bottom: 25px;
 }
 
-
-
-
-
-.menu-item {
-    border: solid medium aqua;
-    background-color: antiquewhite;
-    height: 50px;
-    width: 400px;
+.card-content {
     margin: auto;
+    width: 400px;
+}
+
+.list-item {
+    border-top: solid medium black;
+    font-size: 50px;
+    margin: auto;
+    padding: 20px;
+}
+
+.list-item:focus{
+    border-right: solid 5px chartreuse;
 }
 
 
