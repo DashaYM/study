@@ -18,6 +18,8 @@ public class SingletonBean {
 
     private Map map;
 
+    public static Integer counter = 0;
+
     private static Logger logger = Logger.getLogger(SingletonBean.class.getName());
 
     @PostConstruct

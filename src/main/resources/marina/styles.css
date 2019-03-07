@@ -22,17 +22,21 @@
 
 .card-header .logo{
     font-size: 200px;
+    height: 185px;
+    width: 185px;
+    background-color: white;
     text-align: center;
+    margin-right: auto;
+    margin-left: auto;
     position: relative;
     margin-top: 25px;
+    border-radius: 50%;
 }
-
 
 .card-header .logo .fa-user-circle {
     color: chartreuse;
-    background-color: white;
-    border-radius: 50%;
-
+    position: relative;
+    top: -12px;
 }
 
 .card-header .title{

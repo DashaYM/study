@@ -1,15 +1,27 @@
 package transactions;
 
+import singleton.SingletonBean;
+
 import javax.ejb.*;
 import javax.persistence.*;
 import javax.xml.rpc.ServiceException;
 import java.util.List;
+
+import static singleton.SingletonBean.counter;
 
 @Stateless
 public class ColorDAO {
 
     @PersistenceContext(unitName = "TestPersistence")
     EntityManager em;
+
+    public void persist(Colour entity) {
+        counter++;
+        entity.setColourCode(counter.toString());
+        em.persist(entity);
+        em.flush();
+
+    }
 
     @TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
     public void simpleMerge_requiresNew(Colour entity) {
