@@ -1,7 +1,5 @@
 package transactions;
 
-import singleton.SingletonBean;
-
 import javax.ejb.*;
 import javax.persistence.*;
 import javax.xml.rpc.ServiceException;
@@ -21,6 +19,14 @@ public class ColorDAO {
         em.persist(entity);
         em.flush();
 
+    }
+
+    public void deleteAll(){
+        TypedQuery<Colour> query = em.createQuery("select k from Colour k", Colour.class);
+        List<Colour> colours = query.getResultList();
+        for (Colour colour : colours) {
+            em.remove(colour);
+        }
     }
 
     @TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)

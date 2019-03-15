@@ -17,9 +17,9 @@ public class TimeServiceBean {
 
     public void createTimer() {
         ScheduleExpression scheduleExpression = new ScheduleExpression()
-                .second("0")
-                .minute("0")
-                .hour("0")
+                .second("*/20")
+                .minute("*")
+                .hour("*")
                 .dayOfMonth("*")
                 .month("*")
                 .year("*")
@@ -33,5 +33,10 @@ public class TimeServiceBean {
     @Timeout
     public void onTimer (Timer timer) {
         dao.persist(new Colour());
+    }
+
+    @Schedule(second="30", minute="*", hour="*")
+    public void cleanColors() {
+        dao.deleteAll();
     }
 }
